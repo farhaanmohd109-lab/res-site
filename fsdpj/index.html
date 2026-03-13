@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero-header">
+
+    <nav class="nav-left">
+        <a href="#">Home</a>
+        <a href="#">Movies</a>
+    </nav>
+
+    <div class="logo-center">
+        <img src="posters\ChatGPT Image Feb 15, 2026, 10_42_19 PM.png" alt="Logo">
+    </div>
+
+    <nav class="nav-right">
+        <a href="#">Theatres</a>
+        <a href="#">Tickets</a>
+        <button class="login-btn">Login</button>
+    </nav>
+
+</header>
+
+<div class="bg-layer smoke"></div>
+<canvas id="sparkles"></canvas>
+
+<h1>
+
+
+
+</h1>
+<div class="search-container">
+    <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search movies...">
+        <span class="ripple"></span>
+    </div>
+</div>
+
+<!-- ===== REPEAT THIS SECTION 5 TIMES ===== -->
+
+<div class="carousel-section">
+    <h2>Hollywood</h2>
+
+    <div class="carousel-wrapper">
+        <button class="arrow left">&#10094;</button>
+
+        <div class="carousel">
+
+            <!-- MOVIE CARD -->
+            <div class="movie-card" onclick="openBooking( )" data-color="#1e3a8a">
+                <img class="poster front" src="posters/b61a9da63b6d789eb4e2405316591fc4.jpg">
+                <img class="poster back" src="posters\7579694bfb4559545408866a7505c451.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Leonardo DiCaprio</p>
+                    <p><strong>Director:</strong> Christopher Nolan</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+<!-- MOVIE CARD -->
+           <div class="movie-card" onclick="openBooking( )" data-color="#6A0DAD">
+                <img class="poster front" src="posters/LA LA LAND - Federico Mauro.jpg">
+                <img class="poster back" src="posters\088e4487d23426b51b53fa15c0ab491d.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling,Emma</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+           <div class="movie-card" onclick="openBooking( )" data-color="#8B0000">
+                <img class="poster front" src="posters/download (1).jpg">
+                <img class="poster back" src="posters\1430f111b6dc9014cb6ebf0a75b40ac4.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Robert Pattinson</p>
+                    <p><strong>Director:</strong> matt reeves</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+           <div class="movie-card" onclick="openBooking( )" data-color="#2E8B57">
+                <img class="poster front" src="posters\ef6e84b09bd8137b37b68008d330e2cc.jpg">
+                <img class="poster back" src="posters\7422574a0311635309861d1131b5cd89.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> samuel jackson,austin butler</p>
+                    <p><strong>Director:</strong> quentin tarantino</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" onclick="openBooking( )" data-color="#FF8C00">
+                <img class="poster front" src="posters\89c43dc6134a289040d68684ccff81ac.jpg">
+                <img class="poster back" src="posters\87f369d71202fa55449949e35c2f0f20.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Brad pitt,morgan freeman</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" onclick="openBooking( )" data-color="#1e3a8a">
+                <img class="poster front" src="posters\80bb5e87b41fd212332e886c3d4547aa.jpg">
+                <img class="poster back" src="posters\aa08cc11c6cae1b800498ff4343a2019.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+
+
+
+             <!-- MOVIE CARD -->
+            <div class="movie-card" onclick="openBooking( )" data-color="#1e3a8a">
+                <img class="poster front" src="posters/LA LA LAND - Federico Mauro.jpg">
+                <img class="poster back" src="posters/d7ff9f8fbc9dc604131807da1f36ba5b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling,Emma</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" onclick="openBooking( )" data-color="#1e3a8a">
+                <img class="poster front" src="posters/download (1).jpg">
+                <img class="poster back" src="posters\b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Robert Pattinson</p>
+                    <p><strong>Director:</strong> matt reeves</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\ef6e84b09bd8137b37b68008d330e2cc.jpg">
+                <img class="poster back" src="posters\85a7f6e0acd2942bbd2b8538ca5736a7.jpg">
+
+                <div class="movie-info">
+                    
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> samuel jackson,austin butler</p>
+                    <p><strong>Director:</strong> quentin tarantino</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\89c43dc6134a289040d68684ccff81ac.jpg">
+                <img class="poster back" src="posters\f767c3ea049e68470e73e07760b47bfc.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Brad pitt,morgan freeman</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\80bb5e87b41fd212332e886c3d4547aa.jpg">
+                <img class="poster back" src="posters\78a2dbcd36ac43a74c2b9365e76f2d1b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                        <!-- Copy movie-card for more movies -->
+
+        </div>
+
+        <button class="arrow right">&#10095;</button>
+    </div>
+</div>
+<div class="carousel-section">
+    <h2>Indian Movies</h2>
+
+    <div class="carousel-wrapper">
+        <button class="arrow left">&#10094;</button>
+
+        <div class="carousel">
+
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\9836050f5d88c12fb665fdb49f2f7023.jpg">
+                <img class="poster back" src=https://i.pinimg.com/736x/44/ce/52/44ce523a9b94f6240aeba49419596598.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Shahrukh Khan</p>
+                    <p><strong>Director:</strong> Ashutosh </p>
+                    <p><strong>Producer:</strong> Ashutosh</p>
+                </div>
+            </div>
+<!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#6A0DAD">
+                <img class="poster front" src="posters\966e6daa22ca8bb9143edb09d8c89bdd.jpg">
+                <img class="poster back" src=https://i.pinimg.com/736x/b4/b7/b5/b4b7b5e69c6b702d50be37940c0d07b2.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Rajinikanth</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#8B0000">
+                <img class="poster front" src="posters\34bde3aeafe749896b54c34f11349811.jpg">
+                <img class="poster back" src="posters\65abc22c4cd3a72c51a84fd1fe208141.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Kamal Hassan</p>
+                    <p><strong>Director:</strong>Low Key </p>
+                    <p><strong>Producer:</strong>  kalanithi maaran</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#2E8B57">
+                <img class="poster front" src="posters\a1ecbb4a55efcef4e837ed8e61ec209d.jpg">
+                <img class="poster back" src=https://i.pinimg.com/736x/97/af/1c/97af1c34126c218061dfdf8a1cce6489.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong>Chiyaan Vikram</p>
+                    <p><strong>Director:</strong> Karthik Subbaraj</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#FF8C00">
+                <img class="poster front" src=https://i.pinimg.com/736x/74/b4/98/74b4984c3300255e91e6b7c0a64c8a08.jpg>
+                <img class="poster back" src=https://i.pinimg.com/736x/dd/d5/e8/ddd5e814275428b4ba8526d5987d9944.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong>Hritik,Farhan,Abhay Deol</p>
+                    <p><strong>Director:</strong> Zoya Akhtar </p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src=https://i.pinimg.com/736x/60/f6/43/60f6438d07c414f36db349badab2db9b.jpg>
+                <img class="poster back" src=https://i.pinimg.com/1200x/da/af/14/daaf14d8049195501a66df5399bd316d.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ram Charan,ntr</p>
+                    <p><strong>Director:</strong> SSR</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+
+
+
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/LA LA LAND - Federico Mauro.jpg">
+                <img class="poster back" src="posters/d7ff9f8fbc9dc604131807da1f36ba5b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling,Emma</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/download (1).jpg">
+                <img class="poster back" src="posters\b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Robert Pattinson</p>
+                    <p><strong>Director:</strong> matt reeves</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\ef6e84b09bd8137b37b68008d330e2cc.jpg">
+                <img class="poster back" src="posters\85a7f6e0acd2942bbd2b8538ca5736a7.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> samuel jackson,austin butler</p>
+                    <p><strong>Director:</strong> quentin tarantino</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\89c43dc6134a289040d68684ccff81ac.jpg">
+                <img class="poster back" src="posters\f767c3ea049e68470e73e07760b47bfc.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Brad pitt,morgan freeman</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\80bb5e87b41fd212332e886c3d4547aa.jpg">
+                <img class="poster back" src="posters\78a2dbcd36ac43a74c2b9365e76f2d1b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                        <!-- Copy movie-card for more movies -->
+
+        </div>
+<button class="arrow right">&#10095;</button>
+    </div>
+
+
+ </div>
+
+<div class="carousel-section">
+    <h2>TV Shows</h2>
+
+    <div class="carousel-wrapper">
+        <button class="arrow left">&#10094;</button>
+
+        <div class="carousel">
+
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src=https://i.pinimg.com/736x/05/23/8d/05238d2b5934f1e1965d21cf859b8564.jpg>
+                <img class="poster back" src=https://i.pinimg.com/736x/ce/26/5d/ce265d20ecf9080bf16df686807882c4.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> bryan,aaron</p>
+                    <p><strong>Director:</strong> vince</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+<!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#6A0DAD">
+                <img class="poster front" src=https://i.pinimg.com/736x/b7/a8/6b/b7a86b4f98469c5dd3edc8832944ff65.jpg>
+                <img class="poster back" src=https://i.pinimg.com/736x/83/e8/eb/83e8eb3ef9bebe6fc8d5873b7f729c97.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling,Emma</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#8B0000">
+                <img class="poster front" src=https://i.pinimg.com/736x/ee/6c/2b/ee6c2b7a7f01ffdf1d36e53fa593d8a0.jpg>
+                <img class="poster back" src="posters\1430f111b6dc9014cb6ebf0a75b40ac4.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Robert Pattinson</p>
+                    <p><strong>Director:</strong> matt reeves</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#2E8B57">
+                <img class="poster front" src=https://i.pinimg.com/736x/ca/e0/b4/cae0b469d7f5a3fd37587ef09afcbf43.jpg>
+                <img class="poster back" src="posters\7422574a0311635309861d1131b5cd89.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> samuel jackson,austin butler</p>
+                    <p><strong>Director:</strong> quentin tarantino</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#FF8C00">
+                <img class="poster front" src=https://i.pinimg.com/1200x/da/cc/4b/dacc4b220fcf8c9ec56dc2f8e83f0bd4.jpg>
+                <img class="poster back" src="posters\87f369d71202fa55449949e35c2f0f20.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Brad pitt,morgan freeman</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src=https://i.pinimg.com/736x/c7/de/02/c7de02f277fa53c33a6070405a3a0455.jpg>
+                <img class="poster back" src="posters\aa08cc11c6cae1b800498ff4343a2019.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+
+
+
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/LA LA LAND - Federico Mauro.jpg">
+                <img class="poster back" src="posters/d7ff9f8fbc9dc604131807da1f36ba5b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling,Emma</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/download (1).jpg">
+                <img class="poster back" src="posters\b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Robert Pattinson</p>
+                    <p><strong>Director:</strong> matt reeves</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\ef6e84b09bd8137b37b68008d330e2cc.jpg">
+                <img class="poster back" src="posters\85a7f6e0acd2942bbd2b8538ca5736a7.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> samuel jackson,austin butler</p>
+                    <p><strong>Director:</strong> quentin tarantino</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\89c43dc6134a289040d68684ccff81ac.jpg">
+                <img class="poster back" src="posters\f767c3ea049e68470e73e07760b47bfc.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Brad pitt,morgan freeman</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\80bb5e87b41fd212332e886c3d4547aa.jpg">
+                <img class="poster back" src="posters\78a2dbcd36ac43a74c2b9365e76f2d1b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                        <!-- Copy movie-card for more movies -->
+
+        </div>
+<button class="arrow right">&#10095;</button>
+    </div>
+<div class="carousel-section">
+    <h2>Hollywood</h2>
+
+    <div class="carousel-wrapper">
+        <button class="arrow left">&#10094;</button>
+
+        <div class="carousel">
+
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/b61a9da63b6d789eb4e2405316591fc4.jpg">
+                <img class="poster back" src="posters\7579694bfb4559545408866a7505c451.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Leonardo DiCaprio</p>
+                    <p><strong>Director:</strong> Christopher Nolan</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+<!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#6A0DAD">
+                <img class="poster front" src="posters/LA LA LAND - Federico Mauro.jpg">
+                <img class="poster back" src="posters\088e4487d23426b51b53fa15c0ab491d.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling,Emma</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#8B0000">
+                <img class="poster front" src="posters/download (1).jpg">
+                <img class="poster back" src="posters\1430f111b6dc9014cb6ebf0a75b40ac4.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Robert Pattinson</p>
+                    <p><strong>Director:</strong> matt reeves</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#2E8B57">
+                <img class="poster front" src="posters\ef6e84b09bd8137b37b68008d330e2cc.jpg">
+                <img class="poster back" src="posters\7422574a0311635309861d1131b5cd89.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> samuel jackson,austin butler</p>
+                    <p><strong>Director:</strong> quentin tarantino</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#FF8C00">
+                <img class="poster front" src="posters\89c43dc6134a289040d68684ccff81ac.jpg">
+                <img class="poster back" src="posters\87f369d71202fa55449949e35c2f0f20.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Brad pitt,morgan freeman</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\80bb5e87b41fd212332e886c3d4547aa.jpg">
+                <img class="poster back" src="posters\aa08cc11c6cae1b800498ff4343a2019.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+
+
+
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/LA LA LAND - Federico Mauro.jpg">
+                <img class="poster back" src="posters/d7ff9f8fbc9dc604131807da1f36ba5b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling,Emma</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/download (1).jpg">
+                <img class="poster back" src="posters\b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Robert Pattinson</p>
+                    <p><strong>Director:</strong> matt reeves</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\ef6e84b09bd8137b37b68008d330e2cc.jpg">
+                <img class="poster back" src="posters\85a7f6e0acd2942bbd2b8538ca5736a7.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> samuel jackson,austin butler</p>
+                    <p><strong>Director:</strong> quentin tarantino</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\89c43dc6134a289040d68684ccff81ac.jpg">
+                <img class="poster back" src="posters\f767c3ea049e68470e73e07760b47bfc.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Brad pitt,morgan freeman</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\80bb5e87b41fd212332e886c3d4547aa.jpg">
+                <img class="poster back" src="posters\78a2dbcd36ac43a74c2b9365e76f2d1b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                        <!-- Copy movie-card for more movies -->
+
+        </div>
+
+        <button class="arrow right">&#10095;</button>
+    </div>
+</div>
+<div class="carousel-section">
+    <h2>Indian Movies</h2>
+
+    <div class="carousel-wrapper">
+        <button class="arrow left">&#10094;</button>
+
+        <div class="carousel">
+
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\9836050f5d88c12fb665fdb49f2f7023.jpg">
+                <img class="poster back" src=https://i.pinimg.com/736x/44/ce/52/44ce523a9b94f6240aeba49419596598.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Shahrukh Khan</p>
+                    <p><strong>Director:</strong> Ashutosh </p>
+                    <p><strong>Producer:</strong> Ashutosh</p>
+                </div>
+            </div>
+<!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#6A0DAD">
+                <img class="poster front" src="posters\966e6daa22ca8bb9143edb09d8c89bdd.jpg">
+                <img class="poster back" src=https://i.pinimg.com/736x/b4/b7/b5/b4b7b5e69c6b702d50be37940c0d07b2.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Rajinikanth</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#8B0000">
+                <img class="poster front" src="posters\34bde3aeafe749896b54c34f11349811.jpg">
+                <img class="poster back" src="posters\65abc22c4cd3a72c51a84fd1fe208141.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Kamal Hassan</p>
+                    <p><strong>Director:</strong>Low Key </p>
+                    <p><strong>Producer:</strong>  kalanithi maaran</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#2E8B57">
+                <img class="poster front" src="posters\a1ecbb4a55efcef4e837ed8e61ec209d.jpg">
+                <img class="poster back" src=https://i.pinimg.com/736x/97/af/1c/97af1c34126c218061dfdf8a1cce6489.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong>Chiyaan Vikram</p>
+                    <p><strong>Director:</strong> Karthik Subbaraj</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#FF8C00">
+                <img class="poster front" src=https://i.pinimg.com/736x/74/b4/98/74b4984c3300255e91e6b7c0a64c8a08.jpg>
+                <img class="poster back" src=https://i.pinimg.com/736x/dd/d5/e8/ddd5e814275428b4ba8526d5987d9944.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong>Hritik,Farhan,Abhay Deol</p>
+                    <p><strong>Director:</strong> Zoya Akhtar </p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src=https://i.pinimg.com/736x/60/f6/43/60f6438d07c414f36db349badab2db9b.jpg>
+                <img class="poster back" src=https://i.pinimg.com/1200x/da/af/14/daaf14d8049195501a66df5399bd316d.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ram Charan,ntr</p>
+                    <p><strong>Director:</strong> SSR</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+
+
+
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/LA LA LAND - Federico Mauro.jpg">
+                <img class="poster back" src="posters/d7ff9f8fbc9dc604131807da1f36ba5b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling,Emma</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/download (1).jpg">
+                <img class="poster back" src="posters\b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Robert Pattinson</p>
+                    <p><strong>Director:</strong> matt reeves</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\ef6e84b09bd8137b37b68008d330e2cc.jpg">
+                <img class="poster back" src="posters\85a7f6e0acd2942bbd2b8538ca5736a7.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> samuel jackson,austin butler</p>
+                    <p><strong>Director:</strong> quentin tarantino</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\89c43dc6134a289040d68684ccff81ac.jpg">
+                <img class="poster back" src="posters\f767c3ea049e68470e73e07760b47bfc.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Brad pitt,morgan freeman</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\80bb5e87b41fd212332e886c3d4547aa.jpg">
+                <img class="poster back" src="posters\78a2dbcd36ac43a74c2b9365e76f2d1b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                        <!-- Copy movie-card for more movies -->
+
+        </div>
+<button class="arrow right">&#10095;</button>
+    </div>
+
+
+ </div>
+
+<div class="carousel-section">
+    <h2>TV Shows</h2>
+
+    <div class="carousel-wrapper">
+        <button class="arrow left">&#10094;</button>
+
+        <div class="carousel">
+
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src=https://i.pinimg.com/736x/05/23/8d/05238d2b5934f1e1965d21cf859b8564.jpg>
+                <img class="poster back" src=https://i.pinimg.com/736x/ce/26/5d/ce265d20ecf9080bf16df686807882c4.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> bryan,aaron</p>
+                    <p><strong>Director:</strong> vince</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+<!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#6A0DAD">
+                <img class="poster front" src=https://i.pinimg.com/736x/b7/a8/6b/b7a86b4f98469c5dd3edc8832944ff65.jpg>
+                <img class="poster back" src=https://i.pinimg.com/736x/83/e8/eb/83e8eb3ef9bebe6fc8d5873b7f729c97.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling,Emma</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#8B0000">
+                <img class="poster front" src=https://i.pinimg.com/736x/ee/6c/2b/ee6c2b7a7f01ffdf1d36e53fa593d8a0.jpg>
+                <img class="poster back" src="posters\1430f111b6dc9014cb6ebf0a75b40ac4.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Robert Pattinson</p>
+                    <p><strong>Director:</strong> matt reeves</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#2E8B57">
+                <img class="poster front" src=https://i.pinimg.com/736x/ca/e0/b4/cae0b469d7f5a3fd37587ef09afcbf43.jpg>
+                <img class="poster back" src="posters\7422574a0311635309861d1131b5cd89.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> samuel jackson,austin butler</p>
+                    <p><strong>Director:</strong> quentin tarantino</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#FF8C00">
+                <img class="poster front" src=https://i.pinimg.com/1200x/da/cc/4b/dacc4b220fcf8c9ec56dc2f8e83f0bd4.jpg>
+                <img class="poster back" src="posters\87f369d71202fa55449949e35c2f0f20.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Brad pitt,morgan freeman</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src=https://i.pinimg.com/736x/c7/de/02/c7de02f277fa53c33a6070405a3a0455.jpg>
+                <img class="poster back" src="posters\aa08cc11c6cae1b800498ff4343a2019.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+
+
+
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/LA LA LAND - Federico Mauro.jpg">
+                <img class="poster back" src="posters/d7ff9f8fbc9dc604131807da1f36ba5b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling,Emma</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/download (1).jpg">
+                <img class="poster back" src="posters\b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Robert Pattinson</p>
+                    <p><strong>Director:</strong> matt reeves</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\ef6e84b09bd8137b37b68008d330e2cc.jpg">
+                <img class="poster back" src="posters\85a7f6e0acd2942bbd2b8538ca5736a7.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> samuel jackson,austin butler</p>
+                    <p><strong>Director:</strong> quentin tarantino</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\89c43dc6134a289040d68684ccff81ac.jpg">
+                <img class="poster back" src="posters\f767c3ea049e68470e73e07760b47bfc.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Brad pitt,morgan freeman</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\80bb5e87b41fd212332e886c3d4547aa.jpg">
+                <img class="poster back" src="posters\78a2dbcd36ac43a74c2b9365e76f2d1b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                        <!-- Copy movie-card for more movies -->
+
+        </div>
+<button class="arrow right">&#10095;</button>
+    </div>
+<div class="carousel-section">
+    <h2>Hollywood</h2>
+
+    <div class="carousel-wrapper">
+        <button class="arrow left">&#10094;</button>
+
+        <div class="carousel">
+
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/b61a9da63b6d789eb4e2405316591fc4.jpg">
+                <img class="poster back" src="posters\7579694bfb4559545408866a7505c451.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Leonardo DiCaprio</p>
+                    <p><strong>Director:</strong> Christopher Nolan</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+<!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#6A0DAD">
+                <img class="poster front" src="posters/LA LA LAND - Federico Mauro.jpg">
+                <img class="poster back" src="posters\088e4487d23426b51b53fa15c0ab491d.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling,Emma</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#8B0000">
+                <img class="poster front" src="posters/download (1).jpg">
+                <img class="poster back" src="posters\1430f111b6dc9014cb6ebf0a75b40ac4.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Robert Pattinson</p>
+                    <p><strong>Director:</strong> matt reeves</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#2E8B57">
+                <img class="poster front" src="posters\ef6e84b09bd8137b37b68008d330e2cc.jpg">
+                <img class="poster back" src="posters\7422574a0311635309861d1131b5cd89.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> samuel jackson,austin butler</p>
+                    <p><strong>Director:</strong> quentin tarantino</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#FF8C00">
+                <img class="poster front" src="posters\89c43dc6134a289040d68684ccff81ac.jpg">
+                <img class="poster back" src="posters\87f369d71202fa55449949e35c2f0f20.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Brad pitt,morgan freeman</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\80bb5e87b41fd212332e886c3d4547aa.jpg">
+                <img class="poster back" src="posters\aa08cc11c6cae1b800498ff4343a2019.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+
+
+
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/LA LA LAND - Federico Mauro.jpg">
+                <img class="poster back" src="posters/d7ff9f8fbc9dc604131807da1f36ba5b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling,Emma</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/download (1).jpg">
+                <img class="poster back" src="posters\b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Robert Pattinson</p>
+                    <p><strong>Director:</strong> matt reeves</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\ef6e84b09bd8137b37b68008d330e2cc.jpg">
+                <img class="poster back" src="posters\85a7f6e0acd2942bbd2b8538ca5736a7.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> samuel jackson,austin butler</p>
+                    <p><strong>Director:</strong> quentin tarantino</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\89c43dc6134a289040d68684ccff81ac.jpg">
+                <img class="poster back" src="posters\f767c3ea049e68470e73e07760b47bfc.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Brad pitt,morgan freeman</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\80bb5e87b41fd212332e886c3d4547aa.jpg">
+                <img class="poster back" src="posters\78a2dbcd36ac43a74c2b9365e76f2d1b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                        <!-- Copy movie-card for more movies -->
+
+        </div>
+
+        <button class="arrow right">&#10095;</button>
+    </div>
+</div>
+<div class="carousel-section">
+    <h2>Indian Movies</h2>
+
+    <div class="carousel-wrapper">
+        <button class="arrow left">&#10094;</button>
+
+        <div class="carousel">
+
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\9836050f5d88c12fb665fdb49f2f7023.jpg">
+                <img class="poster back" src=https://i.pinimg.com/736x/44/ce/52/44ce523a9b94f6240aeba49419596598.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Shahrukh Khan</p>
+                    <p><strong>Director:</strong> Ashutosh </p>
+                    <p><strong>Producer:</strong> Ashutosh</p>
+                </div>
+            </div>
+<!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#6A0DAD">
+                <img class="poster front" src="posters\966e6daa22ca8bb9143edb09d8c89bdd.jpg">
+                <img class="poster back" src=https://i.pinimg.com/736x/b4/b7/b5/b4b7b5e69c6b702d50be37940c0d07b2.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Rajinikanth</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#8B0000">
+                <img class="poster front" src="posters\34bde3aeafe749896b54c34f11349811.jpg">
+                <img class="poster back" src="posters\65abc22c4cd3a72c51a84fd1fe208141.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Kamal Hassan</p>
+                    <p><strong>Director:</strong>Low Key </p>
+                    <p><strong>Producer:</strong>  kalanithi maaran</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#2E8B57">
+                <img class="poster front" src="posters\a1ecbb4a55efcef4e837ed8e61ec209d.jpg">
+                <img class="poster back" src=https://i.pinimg.com/736x/97/af/1c/97af1c34126c218061dfdf8a1cce6489.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong>Chiyaan Vikram</p>
+                    <p><strong>Director:</strong> Karthik Subbaraj</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#FF8C00">
+                <img class="poster front" src=https://i.pinimg.com/736x/74/b4/98/74b4984c3300255e91e6b7c0a64c8a08.jpg>
+                <img class="poster back" src=https://i.pinimg.com/736x/dd/d5/e8/ddd5e814275428b4ba8526d5987d9944.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong>Hritik,Farhan,Abhay Deol</p>
+                    <p><strong>Director:</strong> Zoya Akhtar </p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src=https://i.pinimg.com/736x/60/f6/43/60f6438d07c414f36db349badab2db9b.jpg>
+                <img class="poster back" src=https://i.pinimg.com/1200x/da/af/14/daaf14d8049195501a66df5399bd316d.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ram Charan,ntr</p>
+                    <p><strong>Director:</strong> SSR</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+
+
+
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/LA LA LAND - Federico Mauro.jpg">
+                <img class="poster back" src="posters/d7ff9f8fbc9dc604131807da1f36ba5b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling,Emma</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/download (1).jpg">
+                <img class="poster back" src="posters\b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Robert Pattinson</p>
+                    <p><strong>Director:</strong> matt reeves</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\ef6e84b09bd8137b37b68008d330e2cc.jpg">
+                <img class="poster back" src="posters\85a7f6e0acd2942bbd2b8538ca5736a7.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> samuel jackson,austin butler</p>
+                    <p><strong>Director:</strong> quentin tarantino</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\89c43dc6134a289040d68684ccff81ac.jpg">
+                <img class="poster back" src="posters\f767c3ea049e68470e73e07760b47bfc.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Brad pitt,morgan freeman</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\80bb5e87b41fd212332e886c3d4547aa.jpg">
+                <img class="poster back" src="posters\78a2dbcd36ac43a74c2b9365e76f2d1b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                        <!-- Copy movie-card for more movies -->
+
+        </div>
+<button class="arrow right">&#10095;</button>
+    </div>
+
+
+ </div>
+
+<div class="carousel-section">
+    <h2>TV Shows</h2>
+
+    <div class="carousel-wrapper">
+        <button class="arrow left">&#10094;</button>
+
+        <div class="carousel">
+
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src=https://i.pinimg.com/736x/05/23/8d/05238d2b5934f1e1965d21cf859b8564.jpg>
+                <img class="poster back" src=https://i.pinimg.com/736x/ce/26/5d/ce265d20ecf9080bf16df686807882c4.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> bryan,aaron</p>
+                    <p><strong>Director:</strong> vince</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+<!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#6A0DAD">
+                <img class="poster front" src=https://i.pinimg.com/736x/b7/a8/6b/b7a86b4f98469c5dd3edc8832944ff65.jpg>
+                <img class="poster back" src=https://i.pinimg.com/736x/83/e8/eb/83e8eb3ef9bebe6fc8d5873b7f729c97.jpg>
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling,Emma</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#8B0000">
+                <img class="poster front" src=https://i.pinimg.com/736x/ee/6c/2b/ee6c2b7a7f01ffdf1d36e53fa593d8a0.jpg>
+                <img class="poster back" src="posters\1430f111b6dc9014cb6ebf0a75b40ac4.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Robert Pattinson</p>
+                    <p><strong>Director:</strong> matt reeves</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#2E8B57">
+                <img class="poster front" src=https://i.pinimg.com/736x/ca/e0/b4/cae0b469d7f5a3fd37587ef09afcbf43.jpg>
+                <img class="poster back" src="posters\7422574a0311635309861d1131b5cd89.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> samuel jackson,austin butler</p>
+                    <p><strong>Director:</strong> quentin tarantino</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#FF8C00">
+                <img class="poster front" src=https://i.pinimg.com/1200x/da/cc/4b/dacc4b220fcf8c9ec56dc2f8e83f0bd4.jpg>
+                <img class="poster back" src="posters\87f369d71202fa55449949e35c2f0f20.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Brad pitt,morgan freeman</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src=https://i.pinimg.com/736x/c7/de/02/c7de02f277fa53c33a6070405a3a0455.jpg>
+                <img class="poster back" src="posters\aa08cc11c6cae1b800498ff4343a2019.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+
+
+
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/LA LA LAND - Federico Mauro.jpg">
+                <img class="poster back" src="posters/d7ff9f8fbc9dc604131807da1f36ba5b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling,Emma</p>
+                    <p><strong>Director:</strong> damien chazelle</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+              <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters/download (1).jpg">
+                <img class="poster back" src="posters\b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Robert Pattinson</p>
+                    <p><strong>Director:</strong> matt reeves</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\ef6e84b09bd8137b37b68008d330e2cc.jpg">
+                <img class="poster back" src="posters\85a7f6e0acd2942bbd2b8538ca5736a7.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> samuel jackson,austin butler</p>
+                    <p><strong>Director:</strong> quentin tarantino</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+             <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\89c43dc6134a289040d68684ccff81ac.jpg">
+                <img class="poster back" src="posters\f767c3ea049e68470e73e07760b47bfc.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Brad pitt,morgan freeman</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+            <!-- MOVIE CARD -->
+            <div class="movie-card" data-color="#1e3a8a">
+                <img class="poster front" src="posters\80bb5e87b41fd212332e886c3d4547aa.jpg">
+                <img class="poster back" src="posters\78a2dbcd36ac43a74c2b9365e76f2d1b.jpg">
+
+                <div class="movie-info">
+                    <h3>Inception</h3>
+                    <p><strong>Cast:</strong> Ryan Gosling</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Producer:</strong> Emma Thomas</p>
+                </div>
+            </div>
+                        <!-- Copy movie-card for more movies -->
+
+        </div>
+<button class="arrow right">&#10095;</button>
+    </div>
+
+
+ </div>
+        <script src="script.js"></script>
+<footer class="hero-footer">
+    <div class="footer-content">
+        <p>© 2026 404Seats • All Rights Reserved</p>
+        <p>Made for Movie Lovers 🎬</p>
+    </div>
+</footer>
+
+</body>
+
+</html>

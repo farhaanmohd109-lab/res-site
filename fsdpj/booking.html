@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePro Ultra</title>
+    <style>
+        :root {
+            --accent: #f5c518;
+            --booked: #ff4d4d;
+            --bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text: #ffffff;
+            --muted: #b3b3b3;
+        }
+
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); margin: 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .hidden { display: none; }
+        
+        /* Buttons */
+        .btn { background: var(--accent); color: #000; border: none; padding: 12px 28px; font-weight: 700; border-radius: 4px; cursor: pointer; text-transform: uppercase; }
+        .btn-back { background: transparent; color: var(--muted); border: 1px solid var(--muted); padding: 8px 15px; border-radius: 4px; cursor: pointer; margin-bottom: 20px; }
+
+        /* Search Bar UI */
+        .search-container { margin-bottom: 30px; display: flex; gap: 15px; flex-wrap: wrap; }
+        #movie-search { flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #333; background: #1a1a1a; color: white; font-size: 1rem; }
+        #genre-filter { padding: 12px; border-radius: 8px; border: 1px solid #333; background: #1a1a1a; color: white; cursor: pointer; }
+
+        /* Movie Grid */
+        .movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 25px; }
+        .movie-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; cursor: pointer; transition: 0.3s; border: 1px solid #333; }
+        .movie-card:hover { transform: translateY(-10px); border-color: var(--accent); }
+        .movie-card img { width: 100%; height: 320px; object-fit: cover; }
+        .movie-card-info { padding: 15px; }
+
+        /* Details */
+        .details-layout { display: grid; grid-template-columns: 350px 1fr; gap: 40px; }
+        .details-poster { width: 100%; border-radius: 15px; box-shadow: 0 0 30px rgba(245, 197, 24, 0.2); }
+        .cast-strip { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; }
+        .actor { text-align: center; min-width: 80px; font-size: 0.8rem; }
+        .actor img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-bottom: 5px; background: #333; }
+
+        /* Theatre & Time */
+        .theatre-card { background: #151515; padding: 25px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #222; }
+        .theatre-name { color: var(--accent); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .time-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px; }
+        .time-slot { background: #222; border: 1px solid #444; color: #fff; padding: 12px; text-align: center; border-radius: 6px; cursor: pointer; transition: 0.2s; }
+        .time-slot:hover { background: var(--accent); color: #000; border-color: var(--accent); }
+
+        /* Seats */
+        .seat-grid { display: flex; flex-direction: column; align-items: center; gap: 8px; margin: 30px 0; }
+        .row { display: flex; gap: 8px; }
+        .seat { width: 28px; height: 26px; background: #333; border-radius: 4px; cursor: pointer; }
+        .seat.selected { background: var(--accent); }
+        .seat.occupied { background: var(--booked); cursor: not-allowed; }
+        .screen { width: 80%; height: 4px; background: #555; margin: 40px auto 20px; border-radius: 50%; box-shadow: 0 4px 15px var(--accent); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <section id="page-list">
+        <h1 style="font-size: 2.5rem; margin-bottom: 20px;">CinePro Ultra</h1>
+        
+        <div class="search-container">
+            <input type="text" id="movie-search" placeholder="Search movies by title..." onkeyup="filterMovies()">
+            <select id="genre-filter" onchange="filterMovies()">
+                <option value="all">All Genres</option>
+                <option value="Action">Action</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Crime">Crime</option>
+            </select>
+        </div>
+
+        <div class="movie-grid" id="movie-grid"></div>
+        <div style="text-align: center; margin-top: 40px;">
+            <button class="btn-back" onclick="localStorage.clear(); location.reload();">Clear All Bookings</button>
+        </div>
+    </section>
+
+    <section id="page-details" class="hidden">
+        <button class="btn-back" onclick="showPage('page-list')">← Back</button>
+        <div class="details-layout">
+            <img id="det-img" class="details-poster">
+            <div>
+                <h1 id="det-title" style="font-size: 3.5rem; margin: 0;"></h1>
+                <p id="det-meta" style="color: var(--accent); font-weight: bold;"></p>
+                <p id="det-desc" style="font-size: 1.1rem; line-height: 1.7; color: #ccc;"></p>
+                <h3>Director: <span id="det-dir" style="font-weight: normal; color: #fff;"></span></h3>
+                <h3>Top Cast</h3>
+                <div class="cast-strip" id="det-cast"></div>
+                <button class="btn" style="margin-top: 20px;" onclick="showPage('page-theatres')">Get Tickets</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="page-theatres" class="hidden">
+        <button class="btn-back" onclick="showPage('page-details')">← Back</button>
+        <h2>Select Theatre & Showtime</h2>
+        <div id="theatre-list"></div>
+    </section>
+
+    <section id="page-seats" class="hidden">
+        <button class="btn-back" onclick="showPage('page-theatres')">← Back</button>
+        <div style="text-align: center;">
+            <h2 id="seat-header">Select Seats</h2>
+            <div class="screen"></div>
+            <div class="seat-grid" id="seat-layout"></div>
+            <h3>Total Price: <span id="total-price" style="color: var(--accent);">$0</span></h3>
+            <button class="btn" onclick="showPage('page-confirm')">Continue to Checkout</button>
+        </div>
+    </section>
+
+    <section id="page-confirm" class="hidden">
+        <button class="btn-back" onclick="showPage('page-seats')">← Back</button>
+        <h2>Finalize Booking</h2>
+        <div style="max-width: 400px; background: #111; padding: 30px; border-radius: 10px;">
+            <input type="text" placeholder="Full Name" style="width:100%; padding:12px; margin-bottom:15px; background:#222; border:1px solid #444; color:#fff;">
+            <input type="email" placeholder="Email" style="width:100%; padding:12px; margin-bottom:15px; background:#222; border:1px solid #444; color:#fff;">
+            <input type="text" placeholder="UPI Id" style="width:100%; padding:12px; margin-bottom:15px; background:#222; border:1px solid #444; color:#fff;">
+            <button class="btn" style="width:100%;" onclick="finalize()">Confirm Booking</button>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    const movies = [
+        { 
+            id: 'dk', title: 'The Dark Knight', rating: '9.0', genre: 'Crime', dir: 'Christopher Nolan', 
+            poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfE_qrYMBZ_JB8om-34WGaZARhpX26yWRttqIDvn4_7l--UzX8mxKcPrc59IcvTpEA_G8gPA&s=10', 
+            desc: 'Batman has a new foe, the Joker, who is an accomplished criminal hell-bent on decimating Gotham City. Together with Gordon and Harvey Dent, Batman struggles to thwart the Joker before it is too late.', 
+            cast: [
+                { name: 'Christian Bale', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Christian_Bale-7837.jpg/500px-Christian_Bale-7837.jpg' },
+                { name: 'Heath Ledger', img: 'https://images7.alphacoders.com/344/thumb-1920-344910.jpg' }
+            ] 
+        },
+        { 
+            id: 'inc', title: 'Inception', rating: '8.8', genre: 'Sci-Fi', dir: 'Christopher Nolan', 
+            poster: 'https://m.media-amazon.com/images/M/MV5BZjhkNjM0ZTMtNGM5MC00ZTQ3LTk3YmYtZTkzYzdiNWE0ZTA2XkEyXkFqcGc@._V1_.jpg', 
+            desc: 'Cobb steals information from his targets by entering their dreams. He is wanted for his alleged role in his wife`s murder and his only chance at redemption is to perform a nearly impossible task.', 
+            cast: [
+                { name: 'Leonardo DiCaprio', img: 'https://cdn.britannica.com/65/227665-050-D74A477E/American-actor-Leonardo-DiCaprio-2016.jpg' },
+                { name: 'Cillian Murphy', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Cillian_Murphy_at_Berlinale_2024%2C_Ausschnitt.jpg/960px-Cillian_Murphy_at_Berlinale_2024%2C_Ausschnitt.jpg' }
+            ] 
+        },
+        { 
+            id: 'dune', title: 'Dune: Part Two', rating: '8.9', genre: 'Sci-Fi', dir: 'Denis Villeneuve', 
+            poster: 'https://m.media-amazon.com/images/M/MV5BNTc0YmQxMjEtODI5MC00NjFiLTlkMWUtOGQ5NjFmYWUyZGJhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg', 
+            desc: 'Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the universe, he must prevent a terrible future only he can foresee.', 
+            cast: [
+                { name: 'Timothée Chalamet', img: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Timoth%C3%A9e_Chalamet-63482_%28cropped%29.jpg' },
+                { name: 'Zendaya', img: 'https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/68bda73fa047e2001d12f38f.jpg' }
+            ] 
+        },
+        { 
+            id: 'inter', title: 'Interstellar', rating: '8.7', genre: 'Sci-Fi', dir: 'Christopher Nolan', 
+            poster: 'https://m.media-amazon.com/images/I/61wrhEawgQL._AC_UF894,1000_QL80_.jpg', 
+            desc: 'When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.', 
+            cast: [
+                { name: 'M. McConaughey', img: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Matthew_McConaughey_at_the_2025_Toronto_Film_Festival_%28Cropped%29.jpg' },
+                { name: 'Anne Hathaway', img: 'https://upload.wikimedia.org/wikipedia/commons/0/03/Anne_Hathaway_at_The_Apprentice_in_NYC_03_%28cropped2%29.jpg' }
+            ] 
+        }
+    ];
+
+    const theatres = [
+        { name: 'PVR: Icon Mall', times: ['10:00 AM', '01:30 PM', '04:45 PM', '09:00 PM'] },
+        { name: 'INOX: City Center', times: ['11:15 AM', '02:45 PM', '06:30 PM', '10:15 PM'] },
+        { name: 'Cinepolis: Grand Plaza', times: ['12:30 PM', '03:45 PM', '08:00 PM'] }
+    ];
+    
+    let currentMovie = null;
+    let currentTheatre = "";
+    let currentSlot = "";
+    let db = JSON.parse(localStorage.getItem('cinepro_db')) || {};
+
+function init() {
+
+    const params = new URLSearchParams(window.location.search);
+    const direct = params.get("direct");
+
+    if(direct){
+        currentMovie = movies[0]; // default movie
+        showPage('page-theatres');
+    } else {
+        renderMovies(movies);
+    }
+
+}
+
+    function renderMovies(movieList) {
+        const grid = document.getElementById('movie-grid');
+        grid.innerHTML = "";
+        movieList.forEach(m => {
+            grid.innerHTML += `<div class="movie-card" onclick="openDetails('${m.id}')">
+                <img src="${m.poster}">
+                <div class="movie-card-info">
+                    <h3>${m.title}</h3>
+                    <span style="color:var(--accent)">★ ${m.rating} | ${m.genre}</span>
+                </div>
+            </div>`;
+        });
+        if(movieList.length === 0) {
+            grid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--muted);">No movies found.</p>`;
+        }
+    }
+
+    function filterMovies() {
+        const query = document.getElementById('movie-search').value.toLowerCase();
+        const genre = document.getElementById('genre-filter').value;
+        
+        const filtered = movies.filter(m => {
+            const matchesSearch = m.title.toLowerCase().includes(query);
+            const matchesGenre = genre === 'all' || m.genre === genre;
+            return matchesSearch && matchesGenre;
+        });
+        
+        renderMovies(filtered);
+    }
+
+    function showPage(id) {
+        document.querySelectorAll('section').forEach(s => s.classList.add('hidden'));
+        document.getElementById(id).classList.remove('hidden');
+        if(id === 'page-theatres') loadTheatres();
+        if(id === 'page-seats') generateSeats();
+    }
+
+    function openDetails(id) {
+        currentMovie = movies.find(m => m.id === id);
+        document.getElementById('det-title').innerText = currentMovie.title;
+        document.getElementById('det-img').src = currentMovie.poster;
+        document.getElementById('det-meta').innerText = `★ ${currentMovie.rating} | ${currentMovie.genre} | 2h 30m`;
+        document.getElementById('det-desc').innerText = currentMovie.desc;
+        document.getElementById('det-dir').innerText = currentMovie.dir;
+        
+        let castHtml = '';
+        currentMovie.cast.forEach(actor => {
+            castHtml += `
+                <div class="actor">
+                    <img src="${actor.img}" alt="${actor.name}" onerror="this.src='https://via.placeholder.com/60/333/fff?text=${actor.name[0]}'">
+                    <div>${actor.name}</div>
+                </div>`;
+        });
+        document.getElementById('det-cast').innerHTML = castHtml;
+        showPage('page-details');
+    }
+
+    function loadTheatres() {
+        const list = document.getElementById('theatre-list');
+        list.innerHTML = "";
+        theatres.forEach(th => {
+            let timeBtns = th.times.map(t => `<div class="time-slot" onclick="selectSlot('${th.name}', '${t}')">${t}</div>`).join('');
+            list.innerHTML += `<div class="theatre-card">
+                <div class="theatre-name">📍 ${th.name}</div>
+                <div class="time-grid">${timeBtns}</div>
+            </div>`;
+        });
+    }
+
+    function selectSlot(th, t) {
+        currentTheatre = th;
+        currentSlot = t;
+        document.getElementById('seat-header').innerText = `${currentMovie.title} @ ${t}`;
+        showPage('page-seats');
+    }
+
+    function generateSeats() {
+        const layout = document.getElementById('seat-layout');
+        layout.innerHTML = "";
+        const sessionKey = `${currentMovie.id}_${currentTheatre}_${currentSlot}`;
+        const booked = db[sessionKey] || [];
+
+        for(let i=0; i<6; i++) {
+            const row = document.createElement('div');
+            row.className = 'row';
+            for(let j=0; j<12; j++) {
+                const sId = `r${i}c${j}`;
+                const seat = document.createElement('div');
+                seat.className = 'seat';
+                if(booked.includes(sId)) seat.classList.add('occupied');
+                seat.onclick = () => {
+                    if(!seat.classList.contains('occupied')) {
+                        seat.classList.toggle('selected');
+                        document.getElementById('total-price').innerText = '$' + (document.querySelectorAll('.seat.selected').length * 15);
+                    }
+                };
+                row.appendChild(seat);
+            }
+            layout.appendChild(row);
+        }
+    }
+
+    function finalize() {
+        const sessionKey = `${currentMovie.id}_${currentTheatre}_${currentSlot}`;
+        if(!db[sessionKey]) db[sessionKey] = [];
+        
+        const selected = document.querySelectorAll('.seat.selected');
+        if(selected.length === 0) return alert("Select seats!");
+
+        const allSeats = document.querySelectorAll('.seat');
+        allSeats.forEach((s, idx) => {
+            if(s.classList.contains('selected')) {
+                const sId = `r${Math.floor(idx/12)}c${idx%12}`;
+                db[sessionKey].push(sId);
+            }
+        });
+
+        localStorage.setItem('cinepro_db', JSON.stringify(db));
+        alert("Booking Successful! Seats are now Red.");
+        location.reload();
+    }
+
+    init();
+</script>
+
+</body>
+</html>
